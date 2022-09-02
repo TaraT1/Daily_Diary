@@ -24,7 +24,7 @@
     "morgan": "^1.10.0",
     "node-datetime": "^2.1.2",
     "nodemon": "^2.0.19",
-    "passport": "^0.4.1",
+    "passport": "^0.6.0",
     "passport-local": "^1.0.0",
     "validator": "^13.7.0"
   }
