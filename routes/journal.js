@@ -5,7 +5,7 @@ const { ensureAuth, ensureGuest } = require('../middleware/auth')
 
 router.get('/', ensureAuth, journalController.getJournal)
 
-router.post('/createTodo', journalController.createJournalEntry)
+router.post('/createJournalEntry', journalController.createJournalEntry)
 
 //router.put('/markComplete', todosController.markComplete)
 
