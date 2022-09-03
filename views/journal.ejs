@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+     <!-- Compiled and minified CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <h1>Journal Entries</h1>
+    <h2><%= user.userName %> has <%= left %> Journal Entries.</h2>
+   
+    <form action="/journal/create" method='POST'>
+        <div class="form-fields">
+            <input class="field" type="text" placeholder="Subject" name="journalSubject">
+            <input class="field" type="date" name="journalDate">
+            <textarea type="text" placeholder="Write Your Journal entry" name='journalEntry'></textarea>
+            <input type="submit">
+        </div>
+       
+    </form>
+
+    <a href="/logout">Logout</a>
+    <div class="divider"></div>
+    <ul>
+    <% journal.forEach( el => { %>
+            <li class='journalEntry' data-id='<%=el._id%>'>
+                <h3><%= el.journalSubject %></h3>
+                <h5><%= el.journalDate %></h5>
+                <p><%= el.journalEntry %></p><!--??? was <% el.todo %>--> 
+                <button class='del'> Delete </button>
+            </li>
+    <% }) %>    
+    </ul>
+
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
+    <script src="js/main.js"></script>
+    
+</body>
+</html>
